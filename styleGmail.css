@@ -16,70 +16,82 @@ li {
   text-size-adjust: none;
 }
 nav {
-  display: flex;
-  width: 100vw;
-  place-items: center;
+  grid-area: nav;
+  display: grid;
+  grid-template-columns: [navLogo] 100px [searchBar] 100px [helpss] 100px;
 }
-.space{
-    width: 50px;
+nav .logo img {
+  display: grid;
+  grid-area: navLogo;
 }
+nav img.search {
+  display: grid;
+  grid-area: searchBar;
+}
+nav .helps ul {
+  display: grid;
+  grid-area: helpss;
+  grid-template-columns: repeat(5, [listOfNav] 20px);
+  grid-gap: 2px;
 
-.helps ul{
-    display: flex;
-    flex-wrap: nowrap;
-    width: 100vw;
+  height: 20px;
+}
+.nav .helps ul li img {
+  display: grid;
+  grid-area: listOfNav;
+  display: grid;
+  width: minmax(10px, 20px);
 }
 .leftMenu {
-    width: 20%;
-    height: 100vh;
+  width: 20%;
+  height: 100vh;
   grid-area: leftMenu;
-  
+
   display: grid;
   /* grid-template-rows:[compose listTodo meet hangouts starts details] 50px; */
-  grid-template-areas: 
-  "compose"
-  "listtodo"
-  "meet"
-  "hangouts" 
-  "starts"
-  "details";
-  
+  grid-template-areas:
+    "compose"
+    "listtodo"
+    "meet"
+    "hangouts"
+    "starts"
+    "details";
 }
-.leftMenu .compose{
-    padding: 0px;
-    margin: 0px;
-    width: 50px;
-    height: 50px;
-    display: grid;
-    grid-area: compose;
+.leftMenu .compose {
+  padding: 0px;
+  margin: 0px;
+  width: 50px;
+  height: 50px;
+  display: grid;
+  grid-area: compose;
 }
-.leftMenu .compose img{
-display: grid;
+.leftMenu .compose img {
+  display: grid;
 }
-.leftMenu .listTodo{
+.leftMenu .listTodo {
   grid-area: listtodo;
   grid-template-rows: repeat(10, [listOfImg] 20px);
 }
 
-.leftMenu .listTodo ul{
-    display: grid;
-    grid-area:listOfImg ;
+.leftMenu .listTodo ul {
+  display: grid;
+  grid-area: listOfImg;
 }
-.leftMenu .meet{
-    display: grid;
-    grid-area: meet;
+.leftMenu .meet {
+  display: grid;
+  grid-area: meet;
 }
-.leftMenu .hangouts{
-    display: grid;
-    grid-area: hangouts;
+.leftMenu .hangouts {
+  display: grid;
+  grid-area: hangouts;
 }
-.leftMenu .starts{
-    display: grid;
-    grid-area: starts;
+.leftMenu .starts {
+  display: grid;
+  grid-area: starts;
 }
-.leftMenu .details{
-     display: grid;
-    grid-area: details;
+.leftMenu .details {
+  display: grid;
+  grid-area: details;
 }
 .mainMenu {
   grid-area: mainMenu;
