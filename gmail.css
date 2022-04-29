@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  padding: 10px;
+
+  display: grid;
+  height: 100vh;
+
+  grid-template:
+    "header header header" 50px
+    "leftMenu mail right-menu" 1fr /
+    200px 1fr 230px;
+}
+img {
+  border-radius: 3px;
+  width: 90%;
+}
+.box {
+  border: 2px dotted black;
+}
+.inner-box {
+  border: 2px dotted rgb(145, 137, 205);
+  height: 20px;
+}
+.second-inner-box {
+  border: 2px dotted rgb(179, 38, 38);
+}
+header {
+  grid-area: header;
+
+  display: grid;
+  grid-template-columns: 50px 150px 1fr auto;
+}
+.logo {
+  display: grid;
+  place-items: center;
+}
+.search {
+  border: 2px solid;
+  max-width: 500px;
+}
+.nav-bar {
+  display: grid;
+  place-items: center;
+  width: 80%;
+}
+.search-bar {
+  padding: 3px 5px;
+  display: grid;
+}
+.tool-bar {
+  padding: 5px;
+  display: grid;
+  gap: 5px;
+  grid-auto-flow: column;
+}
+.tool-bar .tool-item {
+  width: 40px;
+  height: 40px;
+}
+.tool-item.long {
+  width: 80px;
+}
+.menu {
+  margin: 5px 0;
+  height: fit-content;
+  padding: 2px;
+  display: grid;
+  gap: 5px;
+}
+.chat .inner-box {
+  display: grid;
+  gap: 5px;
+  padding: 2px;
+  grid-template-columns: 23px 1fr;
+}
+.leftMenu {
+  grid-area: leftMenu;
+}
+.leftMenu .inner-box .circle {
+  border-radius: 50%;
+}
+.leftMenu .chat {
+  display: grid;
+  grid-template-rows: 1fr 25px;
+}
+.mail {
+  display: grid;
+  grid-template-rows: (auto-fit, auto);
+  grid-area: mail;
+  padding: 3px;
+  height: fit-content;
+  gap: 5px;
+}
+.rightBar {
+  padding: 2px;
+}
+
+.rightBar .inner-box {
+  margin: 2px 0;
+}
+.rightMenu {
+  display: grid;
+  grid-template-columns: auto 40px;
+  grid-area: right-menu;
+  gap: 5px;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    grid-template:
+      "header header" 50px
+      "leftMenu mail" 1fr /
+      200px 1fr;
+  }
+
+  .right-menu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .container {
+    grid-template:
+      "header header" 50px
+      "leftMenu mail" 1fr /
+      120px 1fr;
+  }
+}
